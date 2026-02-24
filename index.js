@@ -1,12 +1,14 @@
-const express = require('express')
-const app = express()
+const express = require("express");
+const app = express();
 
-app.get('/',(req,res)=>{
-return res.json({message: 'hey im node server from container !'})
+app.get("/health", (req, res) => {
+  res.status(200).json({ status: "ok" });
 });
 
-setTimeout(() => {
-  throw new Error("Crash test");
-}, 10000);
+app.get("/", (req, res) => {
+  res.send("CI/CD POC Working Fine!");
+});
 
-app.listen(3000,()=>console.log("server running on PORT:3000"))
+app.listen(3000, () => {
+  console.log("Server running on port 3000");
+});

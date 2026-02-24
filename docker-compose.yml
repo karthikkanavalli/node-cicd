@@ -1,16 +1,9 @@
-version: "3.8"
+version: "3.9"
 
 services:
-  postgres:
-    image: postgres
+  app:
+    image: karthikkanavalli/devops-poc-node-app:latest
+    container_name: poc-app
+    restart: always
     ports:
-      - "5432:5432"
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_DB: testdb
-      POSTGRES_PASSWORD: password
-
-  redis:
-    image: redis
-    ports:
-      - "6379:6379"	
+      - "3000:3000"
