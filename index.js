@@ -15,6 +15,9 @@ app.get("/test", (req, res) => {
 app.get("/test2", (req, res) => {
   res.status(200).send("CI/CD POC Working Fine! Test Endpoint 2 newly added");
 });
+app.get("/test3", (req, res) => {
+  res.status(200).send("CI/CD POC Working Fine! Test Endpoint 3 newly added");
+});
 
 app.listen(3000, () => {
   console.log("Server running on port 3000");
